@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://ckavqb25bdaul"]
+
+[ext_resource type="PackedScene" uid="uid://fqkj7w0jhpd8" path="res://player_paddle.tscn" id="1_f3sb7"]
+[ext_resource type="PackedScene" uid="uid://2uvgm0ides4l" path="res://src/enemyPaddle/enemy_paddle.tscn" id="1_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://neafyrt5gjco" path="res://src/ball/ball.tscn" id="2_fj7yv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqwll"]
+size = Vector2(1169, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7wlvu"]
+size = Vector2(19, 79.59459)
+
+[node name="World" type="Node2D" unique_id=1508307320]
+
+[node name="enemyPaddle" parent="." unique_id=1887013954 instance=ExtResource("1_tlwt5")]
+position = Vector2(1019, 353)
+scale = Vector2(1, 0.7149631)
+
+[node name="Ball" parent="." unique_id=648420059 instance=ExtResource("2_fj7yv")]
+position = Vector2(583, 358)
+scale = Vector2(1.1557219, 1.1530162)
+
+[node name="playerPaddle" parent="." unique_id=1393533263 instance=ExtResource("1_f3sb7")]
+position = Vector2(120, 346)
+scale = Vector2(1, 0.7048545)
+motion_mode = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2065457818]
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1858213913]
+position = Vector2(572.5, 656)
+shape = SubResource("RectangleShape2D_aqwll")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1840178299]
+position = Vector2(1152, 304.00003)
+scale = Vector2(1, 10.360001)
+shape = SubResource("RectangleShape2D_7wlvu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=17203653]
+position = Vector2(-0.5000005, 308.69998)
+scale = Vector2(1, 10.360001)
+shape = SubResource("RectangleShape2D_7wlvu")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1256575183]
+position = Vector2(574, -8)
+shape = SubResource("RectangleShape2D_aqwll")

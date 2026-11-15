@@ -1,0 +1,205 @@
+[gd_scene format=3 uid="uid://ckavqb25bdaul"]
+
+[ext_resource type="Texture2D" uid="uid://6se1855uiai5" path="res://Drawing-23.sketchpad.png" id="1_jtyse"]
+[ext_resource type="PackedScene" uid="uid://fqkj7w0jhpd8" path="res://player_paddle.tscn" id="1_nqf05"]
+[ext_resource type="Script" uid="uid://bf7tjv1fy3ovi" path="res://src/ball/world.gd" id="1_un5oj"]
+[ext_resource type="PackedScene" uid="uid://neafyrt5gjco" path="res://src/ball/ball.tscn" id="2_83g8b"]
+[ext_resource type="AudioStream" uid="uid://dpe2jkubxlb3r" path="res://9jackjack8-green-horizon-frutiger-aero-dreamy-630491.mp3" id="2_un5oj"]
+[ext_resource type="AudioStream" uid="uid://bon14qs7au0o6" path="res://soundreality-tennis-ball-hit-151257 (1).mp3" id="5_0ch0g"]
+[ext_resource type="PackedScene" uid="uid://cpus3nl08jyce" path="res://player2.tscn" id="5_jtyse"]
+[ext_resource type="AudioStream" uid="uid://d0ko8qgf0hwto" path="res://freesound_community-bottle-clink-101000.mp3" id="6_s4g2i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqwll"]
+size = Vector2(1169, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7wlvu"]
+size = Vector2(19, 79.59459)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_om3f2"]
+size = Vector2(50, 546)
+
+[sub_resource type="FontFile" id="FontFile_uqwy3"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+
+[sub_resource type="FontFile" id="FontFile_8caby"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+
+[node name="World" type="Node2D" unique_id=1508307320]
+script = ExtResource("1_un5oj")
+
+[node name="Start menu" type="Control" parent="." unique_id=532190842]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 568.0
+offset_top = 320.00003
+offset_right = 608.0
+offset_bottom = 360.00003
+
+[node name="Button" type="Button" parent="Start menu" unique_id=357143481]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Start"
+
+[node name="Button2" type="Button" parent="Start menu" unique_id=401997209]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Exit"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1003815603]
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 736.0
+offset_bottom = 415.0
+scale = Vector2(0.99108636, 0.99924266)
+texture = ExtResource("1_jtyse")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=687940231]
+stream = ExtResource("2_un5oj")
+autoplay = true
+parameters/looping = true
+
+[node name="ball" parent="." unique_id=648420059 instance=ExtResource("2_83g8b")]
+position = Vector2(568, 320.00003)
+scale = Vector2(0.6879224, 0.7114778)
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="ball" unique_id=1265319045]
+stream = ExtResource("5_0ch0g")
+volume_db = 2.101
+pitch_scale = 0.8
+
+[node name="WallSound" type="AudioStreamPlayer2D" parent="ball" unique_id=1209825305]
+stream = ExtResource("6_s4g2i")
+volume_db = -14.631
+pitch_scale = 0.8
+
+[node name="playerPaddle" parent="." unique_id=1393533263 instance=ExtResource("1_nqf05")]
+position = Vector2(176, 327.99997)
+scale = Vector2(1.4015504, 1.4958847)
+motion_mode = 0
+slide_on_ceiling = false
+
+[node name="CharacterBody2D" parent="." unique_id=1076679223 instance=ExtResource("5_jtyse")]
+position = Vector2(971, 320)
+scale = Vector2(1.4559036, 1.5836253)
+motion_mode = 0
+slide_on_ceiling = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2065457818]
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1858213913]
+position = Vector2(580, 615)
+shape = SubResource("RectangleShape2D_aqwll")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1840178299]
+position = Vector2(1110.0001, 593.00006)
+rotation = -0.048820987
+scale = Vector2(1.2661813, 4.1447134)
+shape = SubResource("RectangleShape2D_7wlvu")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=302118571]
+position = Vector2(40.000008, -464)
+rotation = -0.009619896
+scale = Vector2(1.6032044, 17.17865)
+shape = SubResource("RectangleShape2D_7wlvu")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" unique_id=218819555]
+position = Vector2(6, -8416)
+scale = Vector2(2.5702643, 295.10602)
+shape = SubResource("RectangleShape2D_7wlvu")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D" unique_id=1629255102]
+position = Vector2(1160, -198424)
+scale = Vector2(4.120659, 5069.523)
+shape = SubResource("RectangleShape2D_7wlvu")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=1519096209]
+position = Vector2(1122.0001, -11526.005)
+rotation = 0.00057729805
+scale = Vector2(2.5702643, 295.10602)
+shape = SubResource("RectangleShape2D_7wlvu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=17203653]
+position = Vector2(43, 593)
+rotation = 0.0589063
+scale = Vector2(1.266177, 4.1447134)
+shape = SubResource("RectangleShape2D_7wlvu")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1256575183]
+position = Vector2(568, 32)
+shape = SubResource("RectangleShape2D_aqwll")
+
+[node name="LeftGoal" type="Area2D" parent="." unique_id=1238332339]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftGoal" unique_id=1189376118]
+position = Vector2(1136, 288)
+shape = SubResource("RectangleShape2D_om3f2")
+
+[node name="RightGoal" type="Area2D" parent="." unique_id=2026154920]
+position = Vector2(48, 320)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightGoal" unique_id=900719370]
+position = Vector2(-33, -57)
+shape = SubResource("RectangleShape2D_om3f2")
+
+[node name="P1Score" type="Label" parent="." unique_id=1176365661]
+offset_left = 489.0
+offset_top = 8.0
+offset_right = 521.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0.62352943, 0.8745098, 0.2627451, 1)
+theme_override_fonts/font = SubResource("FontFile_uqwy3")
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+
+[node name="P2Score" type="Label" parent="." unique_id=785700085]
+offset_left = 626.0
+offset_top = 8.0
+offset_right = 658.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0.99215686, 0.59607846, 0.2784314, 1)
+theme_override_fonts/font = SubResource("FontFile_8caby")
+theme_override_font_sizes/font_size = 24
+text = "0"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="LeftGoal" to="." method="_on_left_goal_body_entered"]
+[connection signal="body_entered" from="RightGoal" to="." method="_on_right_goal_body_entered"]

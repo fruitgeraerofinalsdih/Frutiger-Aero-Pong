@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://4pqund3nukl7"]
+
+[ext_resource type="Texture2D" uid="uid://dg8xgp21axuhd" path="res://image-removebg-preview (3).png" id="1_epypp"]
+[ext_resource type="Texture2D" uid="uid://budmm12e8mpgd" path="res://Drawing-20.sketchpad.png" id="1_wtcfe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7wlvu"]
+size = Vector2(167.99998, 844.4273)
+
+[node name="Node" type="Node" unique_id=1305969438]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1440879372]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=483125493]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=341385825]
+position = Vector2(52, 275.5)
+scale = Vector2(0.42857143, 0.33513838)
+shape = SubResource("RectangleShape2D_7wlvu")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1737650757]
+position = Vector2(52, 276.25)
+scale = Vector2(0.42857143, 0.33513838)
+texture = ExtResource("1_wtcfe")
+
+[node name="ImageRemovebgPreview(3)" type="StaticBody2D" parent="." unique_id=1976729112]
+position = Vector2(1034, 298)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ImageRemovebgPreview(3)" unique_id=2089952919]
+position = Vector2(-1034, -298)
+polygon = PackedVector2Array(1136, -32, 1134, 629, 1133, 671, 1192, 668, 1221, 20)
+
+[node name="Sprite2D" type="Sprite2D" parent="ImageRemovebgPreview(3)" unique_id=960057991]
+position = Vector2(85.00001, -216)
+scale = Vector2(1.332, 2.656)
+texture = ExtResource("1_epypp")

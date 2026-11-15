@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://fqkj7w0jhpd8"]
+
+[ext_resource type="Script" uid="uid://dyo8rep4r8l42" path="res://player_paddle.gd" id="1_n2oiu"]
+[ext_resource type="Shader" uid="uid://d21kbsdn8g7it" path="res://player_paddle.gdshader" id="2_gx61p"]
+[ext_resource type="Texture2D" uid="uid://c6ioe5lix1l3e" path="res://Drawing-25.sketchpad.png" id="2_n2oiu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vop8p"]
+shader = ExtResource("2_gx61p")
+shader_parameter/wave_speed = 1.8
+shader_parameter/wave_frequency = 18.0
+shader_parameter/wave_strength = 0.004
+shader_parameter/shimmer = 0.15
+shader_parameter/green_tint = Color(0.1, 1, 0.55, 1)
+shader_parameter/blue_tint = Color(0.1, 0.65, 1, 1)
+
+[node name="playerPaddle" type="CharacterBody2D" unique_id=1887013954]
+motion_mode = 1
+script = ExtResource("1_n2oiu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1194929720]
+material = SubResource("ShaderMaterial_vop8p")
+position = Vector2(-5.9604645e-08, 2.2737368e-13)
+scale = Vector2(0.12793852, 0.1240494)
+texture = ExtResource("2_n2oiu")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=903548128]
+scale = Vector2(2.9867125, 2.8421688)
+polygon = PackedVector2Array(10.255414, -2.6818123, 10.255414, 2.6818123, 7.6915607, 8.045437, 2.5638535, 10.727249, -7.6915607, 8.045437, -10.255414, 2.6818123, -10.255414, -2.6818123, -7.6915607, -8.045437, 2.5638535, -10.727249, 7.6915607, -8.045437)

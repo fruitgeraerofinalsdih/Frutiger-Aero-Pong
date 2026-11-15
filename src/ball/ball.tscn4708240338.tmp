@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://neafyrt5gjco"]
+
+[ext_resource type="Script" uid="uid://dxbpnax05jtnj" path="res://src/ball/ball.gd" id="1_ksv3e"]
+[ext_resource type="Texture2D" uid="uid://dhlq6mghp7so3" path="res://pngtree-watercolor-of-indian-kancha-marble-shooting-game-green-glass-heavy-r-png-image_12449747.png" id="2_yt8wm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7wlvu"]
+radius = 32.0
+
+[node name="Ball" type="CharacterBody2D" unique_id=648420059]
+scale = Vector2(1.1557219, 1.2642964)
+script = ExtResource("1_ksv3e")
+
+[node name="Polygon2D" type="Sprite2D" parent="." unique_id=1704935647]
+position = Vector2(0, 2)
+scale = Vector2(0.27549228, 0.26961246)
+texture = ExtResource("2_yt8wm")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=418227585]
+shape = SubResource("CircleShape2D_7wlvu")
+metadata/_edit_group_ = true

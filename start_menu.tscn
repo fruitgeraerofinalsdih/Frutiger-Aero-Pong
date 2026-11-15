@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://c6c1wl7u51pe5"]
+
+[ext_resource type="Script" uid="uid://bkvj4c2etq1hw" path="res://start_menu.gd" id="1_jwbto"]
+[ext_resource type="Texture2D" uid="uid://6se1855uiai5" path="res://Drawing-23.sketchpad.png" id="2_ia0g5"]
+
+[sub_resource type="SystemFont" id="SystemFont_0qq1y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fk4qv"]
+bg_color = Color(0.5281222, 0.73929507, 0.7623703, 1)
+
+[node name="Title" type="Control" unique_id=1558890592]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jwbto")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=327250647]
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 1150.0
+offset_bottom = 646.0
+texture = ExtResource("2_ia0g5")
+
+[node name="StartButton" type="Button" parent="." unique_id=709575360]
+layout_mode = 0
+offset_left = 509.0
+offset_top = 383.0
+offset_right = 640.0
+offset_bottom = 468.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_0qq1y")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_fk4qv")
+text = "Press Start"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

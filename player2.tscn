@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cpus3nl08jyce"]
+
+[ext_resource type="Script" uid="uid://bss4mgihbqfdc" path="res://character_body_2d.gd" id="1_i25i0"]
+[ext_resource type="Shader" uid="uid://bk16t0lk2phft" path="res://player2.gdshader" id="1_vop8p"]
+[ext_resource type="Texture2D" uid="uid://cr5ilvnnpsobg" path="res://Drawing-25.sketchpad (2).png" id="2_rihsh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bhnal"]
+shader = ExtResource("1_vop8p")
+shader_parameter/wave_speed = 1.8
+shader_parameter/wave_frequency = 18.0
+shader_parameter/wave_strength = 0.004
+shader_parameter/shimmer = 0.15
+shader_parameter/orange_tint = Color(1, 0.45, 0.05, 1)
+shader_parameter/gold_tint = Color(1, 0.8, 0.2, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ctwoq"]
+shader = ExtResource("1_vop8p")
+shader_parameter/wave_speed = 1.8
+shader_parameter/wave_frequency = 18.0
+shader_parameter/wave_strength = 0.004
+shader_parameter/shimmer = 0.15
+shader_parameter/orange_tint = Color(1, 0.45, 0.05, 1)
+shader_parameter/gold_tint = Color(1, 0.8, 0.2, 1)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1076679223]
+material = SubResource("ShaderMaterial_bhnal")
+motion_mode = 1
+script = ExtResource("1_i25i0")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1821075320]
+material = SubResource("ShaderMaterial_ctwoq")
+scale = Vector2(0.12915893, 0.11982268)
+texture = ExtResource("2_rihsh")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1643587129]
+rotation = 3.0903783
+scale = Vector2(3.0385225, 2.7854404)
+polygon = PackedVector2Array(10.255414, -2.6818123, 10.255414, 2.6818123, 7.6915607, 8.045437, 2.5638535, 10.727249, -7.6915607, 8.045437, -10.255414, 2.6818123, -10.255414, -2.6818123, -7.6915607, -8.045437, 2.5638535, -10.727249, 7.6915607, -8.045437)
